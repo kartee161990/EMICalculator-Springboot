@@ -18,11 +18,8 @@ public class CustomResponseEntityExceptionHandler {
     @ResponseBody
     public List<ErrorInfo> handleValidationExceptions(MethodArgumentNotValidException ex) {
         List<ErrorInfo> errors = new ArrayList<>();
-        ex.getBindingResult().getAllErrors().forEach((error) -> {
-            errors.add(new ErrorInfo(((FieldError) error).getField(),
-                    error.getDefaultMessage()));
-
-        });
+        ex.getBindingResult().getAllErrors().forEach((error) -> errors.add(new ErrorInfo(((FieldError) error).getField(),
+                error.getDefaultMessage())));
         return errors;
     }
 }

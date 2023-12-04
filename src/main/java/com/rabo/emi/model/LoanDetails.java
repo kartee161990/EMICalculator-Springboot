@@ -8,7 +8,6 @@ import lombok.*;
 import org.hibernate.validator.constraints.Range;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 
 @NoArgsConstructor
