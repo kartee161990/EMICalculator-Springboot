@@ -86,3 +86,7 @@ We have an endpoint with this application
 This project uses an in-memory H2 database to store the outcomes of the EMI calculations.
 
 - Navigate to http://localhost:8080/h2-console to access the console. You can refer the database properties in application properties.
+
+## Note:
+- As this API developed with Angular app, we can run both angular and spring boot app together to use UI to interact with.
+
