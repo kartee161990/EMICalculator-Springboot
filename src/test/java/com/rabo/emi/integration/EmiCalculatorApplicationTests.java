@@ -2,6 +2,7 @@ package com.rabo.emi.integration;
 
 import com.rabo.emi.model.LoanDetails;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.reactive.server.WebTestClient;
@@ -15,11 +16,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient
 class EmiCalculatorApplicationTests {
-	private final WebTestClient webTestClient;
-
-	EmiCalculatorApplicationTests(WebTestClient webTestClient) {
-		this.webTestClient = webTestClient;
-	}
+	@Autowired
+	private WebTestClient webTestClient;
 
 	@Test
 	void shouldCalculateEmiAmount() {
